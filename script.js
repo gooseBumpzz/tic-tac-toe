@@ -9,29 +9,26 @@ function startGame () {
     //reassign DOM element after removeListeners() is fired
     const cells = document.querySelectorAll(".cell")
     const statusText = document.getElementById ("status");
-    
+
     //add status text before the game
     statusText.textContent = `${currentPlayer}'s turn`;
     cells.forEach(element => {
         element.addEventListener("click", clikedCell, { once: true }) 
-        function clikedCell () {
-            // add a market to a specific index of the markerArray
-            const elemIndex =element.getAttribute("index")
-            markerArray[elemIndex] = currentPlayer;
-
-            // addd a marker to the game board
-            element.textContent = currentPlayer;            
-
-            // switch players
-            currentPlayer = (currentPlayer == "X")? "O": "X";
-            // add status text in the game
-            statusText.textContent = `${currentPlayer}'s turn`;
-            console.log(markerArray)
-            checkWinner ();           
-        }       
     }); 
 }
 startGame();
+
+function clikedCell(event) {
+    //capture every square element. event.target == console.log(element) 
+    const element = event.target;
+    const elemIndex = element.getAttribute("index");
+    markerArray[elemIndex] = currentPlayer;
+    element.textContent = currentPlayer;
+
+    currentPlayer = (currentPlayer === "X") ? "O" : "X";
+    statusText.textContent = `${currentPlayer}'s turn`;
+    checkWinner();
+}
 
 function checkWinner () {
     const winCombo = [[0,1,2], [0,4,8], [0,3,6], [3,4,5], [6,7,8], [2,4,6], [1,4,7], [2,5,8]]
