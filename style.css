@@ -2,6 +2,10 @@ body {
     height: 100vh;
 }
 
+h1 {
+    font-family: "Permanent Marker", cursive;
+    font-size: 50px;
+}
 
 #container {
     margin: auto;
@@ -23,7 +27,7 @@ body {
     width: 120px;
 }
 #restartBtn:hover {
-    background-color:  rgb(241, 226, 194);
+    background-color:  rgb(207, 244, 143);
 }
 
 #gameboard {
@@ -50,5 +54,5 @@ body {
 }
 
 .cell:hover{
-    background-color: rgb(241, 226, 194);
+    background-color: rgb(255, 246, 114);
 }
