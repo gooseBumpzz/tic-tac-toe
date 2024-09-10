@@ -11,28 +11,44 @@ body {
 
 }
 
+#status {
+    font-size: 24px;
+    font-weight: bold;
+    font-style: italic;
+}
 
+#restartBtn{
+    font-size: 18px;
+    border-radius: 5px;
+    width: 120px;
+}
+#restartBtn:hover {
+    background-color:  rgb(241, 226, 194);
+}
 
 #gameboard {
     margin: auto;
     display: flex;
-    width: 225px;
-    height: 225px;
+    width: 300px;
+    height: 300px;
     flex-wrap: wrap;
     border: 2px solid black;
     font-family: "Permanent Marker", cursive;
-    font-size: 50px;
+    font-size: 75px;
     cursor: pointer;
 
 }
 
 .cell {
-    width: 75px;
-    height: 75px;
+    width: 100px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 3px solid black;
-    box-sizing: border-box;
-    
+    box-sizing: border-box;   
+}
+
+.cell:hover{
+    background-color: rgb(241, 226, 194);
 }
